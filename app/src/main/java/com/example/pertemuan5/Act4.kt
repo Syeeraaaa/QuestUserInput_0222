@@ -35,6 +35,8 @@ fun FormatDataDiri(modifier: Modifier){
     //variabel-variabel untuk mengingat nilai masukan dari keyboard
     var textName by remember {mutableStateOf("")}
     var textAlamat by remember { mutableStateOf("")}
+    var textJK by remember { mutableStateOf("") }
+    val gender:List<String> = listOf("Laki-laki", "Perempuan")
 
 
 }
