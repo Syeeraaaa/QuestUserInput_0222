@@ -68,7 +68,7 @@ fun FormatDataDiri(modifier: Modifier) {
                     RadioButton(
                         selected = textJK == item,
                         onClick = {
-                            item
+                            textJK = item
                         })
                     Text(item)
                 }
@@ -127,7 +127,7 @@ fun FormatDataDiri(modifier: Modifier) {
         ) {
             Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
                 Text(text = "Nama: " + nama, color = Color.White)
-                Text(text = "Gender: " + gender, color = Color.White)
+                Text(text = "Gender: " +jenis, color = Color.White)
                 Text(text = "Alamat: " + alamat, color = Color.White)
             }
         }
