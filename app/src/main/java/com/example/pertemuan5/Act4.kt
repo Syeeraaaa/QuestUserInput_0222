@@ -55,5 +55,9 @@ fun FormatDataDiri(modifier: Modifier){
             onValueChange = {
                 textName = it
             }
+        )
+        Row() {
+
+        }
 
     }
