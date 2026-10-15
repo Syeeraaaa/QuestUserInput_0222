@@ -80,5 +80,13 @@ fun FormatDataDiri(modifier: Modifier){
                 textAlamat = it
             }
         )
+        HorizontalDivider(
+            modifier = Modifier.padding(
+                bottom =
+                    dimensionResource(R.dimen.padding_medium),
+                top = dimensionResource(
+                    R.dimen.padding_medium
+                )
+            ),
 
     }
