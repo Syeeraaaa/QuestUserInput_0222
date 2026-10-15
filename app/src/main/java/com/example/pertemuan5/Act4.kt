@@ -31,36 +31,39 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FormatDataDiri(modifier: Modifier){
+fun FormatDataDiri(modifier: Modifier) {
     //variabel-variabel untuk mengingat nilai masukan dari keyboard
-    var textName by remember {mutableStateOf("")}
-    var textAlamat by remember { mutableStateOf("")}
+    var textName by remember { mutableStateOf("") }
+    var textAlamat by remember { mutableStateOf("") }
     var textJK by remember { mutableStateOf("") }
-    val gender:List<String> = listOf("Laki-laki", "Perempuan")
+    val gender: List<String> = listOf("Laki-laki", "Perempuan")
 
     //variabel-variabel untuk menyimpan data yang diperoleh dari komponen UI
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var jenis by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.padding(top = 50.dp),
+    Column(
+        modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally) {
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         OutlinedTextField(
             value = textName,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
-            label = {Text(text = "Nama Lengkap")},
+            label = { Text(text = "Nama Lengkap") },
             onValueChange = {
                 textName = it
             }
         )
         Row() {
             gender.forEach { item ->
-                Row(modifier = Modifier.selectable(
+                Row(
+                    modifier = Modifier.selectable(
                     selected = textJK == item,
-                    onClick = {textJK = item}
+                    onClick = { textJK = item }
                 ), verticalAlignment = Alignment.CenterVertically) {
                     RadioButton(
                         selected = textJK == item,
@@ -75,7 +78,7 @@ fun FormatDataDiri(modifier: Modifier){
             value = textAlamat,
             singleLine = true,
             modifier = Modifier.width(250.dp),
-            label = {Text("Alamat")},
+            label = { Text("Alamat") },
             onValueChange = {
                 textAlamat = it
             }
@@ -99,7 +102,7 @@ fun FormatDataDiri(modifier: Modifier){
                 jenis = textJK
                 alamat = textAlamat
             }
-        ){
+        ) {
             Text(
                 stringResource(R.string.submit)
             )
@@ -123,9 +126,10 @@ fun FormatDataDiri(modifier: Modifier){
                 .width(300.dp)
         ) {
             Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
-                Text(text = "Nama: "+nama, color = Color.White)
-                Text(text = "Gender: "+gender, color = Color.White)
-                Text(text = "Alamat: "+alamat, color = Color.White)
+                Text(text = "Nama: " + nama, color = Color.White)
+                Text(text = "Gender: " + gender, color = Color.White)
+                Text(text = "Alamat: " + alamat, color = Color.White)
             }
         }
     }
+}
